@@ -359,18 +359,6 @@ GitHub: @bhairou
 
 Made with ❤️ by Bhairou
 
-text
-
----
-
-## ✅ **AB YEH KARO:**
-
-1. **README.md** open karo
-2. **POORA CODE DELETE KARO**
-3. **UPAR WALA CODE PASTE KARO**
-4. **Ctrl + S** (Save)
-
----
 
 ## ✅ **BATAO - KYA HO GAYA?**
 
