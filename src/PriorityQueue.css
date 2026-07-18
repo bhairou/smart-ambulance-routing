@@ -1,0 +1,325 @@
+/* ===== PRIORITY QUEUE CSS ===== */
+.pq-container {
+  padding: 30px 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.pq-header h2 {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.pq-header p {
+  color: var(--text-secondary);
+  font-size: 16px;
+  margin-top: 4px;
+}
+
+/* ===== FORM ===== */
+.pq-form {
+  background: linear-gradient(145deg, #121b2b, #1a2639);
+  border-radius: 20px;
+  padding: 24px;
+  border: 1px solid rgba(255,255,255,0.06);
+  margin: 20px 0 30px;
+}
+
+.pq-form h3 {
+  color: var(--text-primary);
+  font-size: 18px;
+  margin-bottom: 16px;
+}
+
+.pq-form-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.pq-input {
+  flex: 2;
+  padding: 12px 16px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  color: var(--text-primary);
+  font-size: 14px;
+  transition: border 0.3s;
+}
+
+.pq-input:focus {
+  outline: none;
+  border-color: var(--accent-color);
+}
+
+.pq-select {
+  flex: 1;
+  padding: 12px 16px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  color: var(--text-primary);
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.pq-select:focus {
+  outline: none;
+  border-color: var(--accent-color);
+}
+
+.pq-add-btn {
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #0d6efd, #0b5ed7);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.pq-add-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 40px rgba(13, 110, 253, 0.3);
+}
+
+/* ===== CURRENT PROCESSING ===== */
+.pq-current {
+  margin-bottom: 30px;
+}
+
+.pq-current h4 {
+  color: var(--text-secondary);
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.pq-current-card {
+  background: linear-gradient(145deg, #121b2b, #1a2639);
+  border-radius: 16px;
+  padding: 20px 24px;
+  border-left: 4px solid #0d6efd;
+  border: 1px solid rgba(255,255,255,0.06);
+  border-left-width: 4px;
+}
+
+.pq-current-info {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+}
+
+.pq-current-priority {
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.pq-current-location {
+  color: #c8d0dc;
+  font-size: 15px;
+}
+
+.pq-current-desc {
+  color: #8ab4f8;
+  font-size: 14px;
+}
+
+.pq-current-time {
+  color: #4a5a7a;
+  font-size: 13px;
+}
+
+.pq-current-progress {
+  margin-top: 12px;
+}
+
+.pq-progress-bar {
+  width: 100%;
+  height: 4px;
+  background: #1a2639;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.pq-progress-fill {
+  height: 100%;
+  border-radius: 4px;
+  animation: progressAnim 2s ease-in-out infinite;
+}
+
+@keyframes progressAnim {
+  0% { width: 0%; }
+  100% { width: 100%; }
+}
+
+/* ===== QUEUE LIST ===== */
+.pq-queue-list {
+  background: linear-gradient(145deg, #121b2b, #1a2639);
+  border-radius: 20px;
+  padding: 24px;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.pq-queue-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.pq-queue-header h4 {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.pq-queue-count {
+  background: rgba(13, 110, 253, 0.15);
+  color: #8ab4f8;
+  padding: 4px 14px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.pq-empty {
+  text-align: center;
+  padding: 30px 0;
+  color: #4a5a7a;
+}
+
+.pq-empty span {
+  font-size: 18px;
+  display: block;
+}
+
+.pq-empty p {
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+.pq-queue-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 16px;
+  background: rgba(255,255,255,0.03);
+  border-radius: 12px;
+  border-left: 4px solid #0d6efd;
+  margin-bottom: 8px;
+  transition: all 0.3s ease;
+}
+
+.pq-queue-item:hover {
+  background: rgba(13, 110, 253, 0.05);
+}
+
+.pq-queue-item.processing {
+  background: rgba(13, 110, 253, 0.08);
+  border-color: #0d6efd !important;
+}
+
+.pq-item-rank {
+  color: #4a5a7a;
+  font-size: 13px;
+  font-weight: 600;
+  min-width: 30px;
+}
+
+.pq-item-info {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+}
+
+.pq-item-priority {
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.pq-item-location {
+  color: #c8d0dc;
+  font-size: 14px;
+}
+
+.pq-item-desc {
+  color: #8ab4f8;
+  font-size: 13px;
+}
+
+.pq-item-status {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.pq-status-badge {
+  padding: 2px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.pq-status-badge.pending {
+  background: rgba(74, 222, 128, 0.12);
+  color: #4ade80;
+}
+
+.pq-status-badge.processing {
+  background: rgba(13, 110, 253, 0.15);
+  color: #8ab4f8;
+  animation: pulseBadge 1s ease-in-out infinite;
+}
+
+@keyframes pulseBadge {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+.pq-item-time {
+  color: #4a5a7a;
+  font-size: 12px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .pq-container { padding: 16px; }
+  .pq-form-row { flex-direction: column; }
+  .pq-input { flex: 1; }
+  .pq-select { flex: 1; }
+  .pq-add-btn { width: 100%; }
+  .pq-queue-item { flex-wrap: wrap; }
+  .pq-item-info { width: 100%; }
+  .pq-item-status { width: 100%; justify-content: flex-end; }
+}
+/* ===== FIX WHITE SPACE ===== */
+.pq-container {
+  min-height: 100vh;
+  padding-bottom: 40px;
+}
+
+.pq-footer {
+  display: none;
+}
+
+body {
+  background: #0a0e1a;
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove any extra white space */
+.pq-queue-list:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}

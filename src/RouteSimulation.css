@@ -1,0 +1,620 @@
+.route-sim-container {
+  min-height: 100vh;
+  width: 100%;
+  padding: 24px;
+  color: #f8fafc;
+  background:
+    radial-gradient(circle at 18% 12%, rgba(20, 184, 166, 0.14), transparent 32%),
+    radial-gradient(circle at 82% 0%, rgba(59, 130, 246, 0.16), transparent 30%),
+    linear-gradient(135deg, #07111f 0%, #0e1726 48%, #111827 100%);
+}
+
+.route-shell {
+  width: min(1320px, 100%);
+  margin: 0 auto;
+}
+
+.route-sim-header,
+.route-controls,
+.route-progress,
+.route-info-card {
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  border-radius: 8px;
+  background: rgba(15, 23, 42, 0.76);
+  box-shadow: 0 18px 56px rgba(0, 0, 0, 0.22);
+  backdrop-filter: blur(16px);
+}
+
+.route-sim-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 24px;
+}
+
+.route-eyebrow {
+  display: block;
+  margin-bottom: 8px;
+  color: #67e8f9;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.route-sim-header h2 {
+  margin: 0;
+  font-size: clamp(28px, 4vw, 48px);
+  line-height: 1.02;
+  letter-spacing: 0;
+}
+
+.route-sim-header p {
+  margin: 10px 0 0;
+  color: #a7b4c8;
+  font-size: 15px;
+}
+
+.route-live-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-width: 132px;
+  padding: 12px 16px;
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  border-radius: 8px;
+  color: #e2e8f0;
+  background: rgba(2, 6, 23, 0.48);
+  font-weight: 800;
+}
+
+.route-live-pill span {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: #22c55e;
+  box-shadow: 0 0 0 6px rgba(34, 197, 94, 0.12), 0 0 22px rgba(34, 197, 94, 0.7);
+}
+
+.route-live-pill.on-route span {
+  background: #f59e0b;
+  animation: statusPulse 1s ease-in-out infinite;
+}
+
+.route-live-pill.arrived span {
+  background: #38bdf8;
+}
+
+.route-controls,
+.route-progress {
+  margin-top: 16px;
+  padding: 18px;
+}
+
+.route-live-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 16px;
+}
+
+.route-live-stats article {
+  min-height: 92px;
+  padding: 18px;
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  border-radius: 8px;
+  background: rgba(15, 23, 42, 0.76);
+  box-shadow: 0 18px 52px rgba(0, 0, 0, 0.22);
+}
+
+.route-live-stats span {
+  display: block;
+  color: #94a3b8;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.route-live-stats strong {
+  display: block;
+  margin-top: 8px;
+  color: #ffffff;
+  font-size: 34px;
+  line-height: 1;
+}
+
+.route-controls {
+  display: grid;
+  grid-template-columns: minmax(280px, 1fr) auto;
+  gap: 16px;
+  align-items: end;
+}
+
+.route-select-group {
+  display: grid;
+  gap: 8px;
+}
+
+.route-select-group label,
+.progress-label {
+  color: #a7b4c8;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.route-select {
+  width: 100%;
+  min-height: 46px;
+  padding: 0 44px 0 14px;
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  border-radius: 8px;
+  color: #f8fafc;
+  background: #0b1220;
+  font-size: 15px;
+  outline: none;
+}
+
+.route-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.route-btn {
+  min-width: 92px;
+  min-height: 46px;
+  border: 0;
+  border-radius: 8px;
+  color: #f8fafc;
+  font-size: 14px;
+  font-weight: 900;
+  cursor: pointer;
+  transition: transform 0.22s ease, opacity 0.22s ease;
+}
+
+.route-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+}
+
+.route-btn:disabled {
+  opacity: 0.44;
+  cursor: not-allowed;
+}
+
+.start-btn {
+  background: linear-gradient(135deg, #06b6d4, #2563eb);
+}
+
+.stop-btn {
+  background: linear-gradient(135deg, #fb7185, #dc2626);
+}
+
+.reset-btn {
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  color: #c7d2fe;
+  background: rgba(30, 41, 59, 0.86);
+}
+
+.emergency-btn {
+  background: linear-gradient(135deg, #ef4444, #f97316);
+}
+
+.progress-label {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.progress-track {
+  height: 12px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(2, 6, 23, 0.72);
+}
+
+.progress-fill-route {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #22d3ee, #2563eb, #22c55e);
+  transition: width 0.28s ease;
+}
+
+.progress-fill-route span {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.55), transparent);
+  animation: glareMove 1.25s linear infinite;
+}
+
+.route-map-container {
+  position: relative;
+  min-height: 380px;
+  margin-top: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  border-radius: 8px;
+  background: #0f172a;
+  box-shadow: 0 24px 90px rgba(0, 0, 0, 0.38);
+}
+
+.route-map,
+.route-map.leaflet-container {
+  width: 100%;
+  height: min(58vh, 540px) !important;
+  min-height: 380px;
+  background: #0f172a;
+}
+
+.route-div-icon {
+  background: transparent;
+  border: 0;
+}
+
+.ambulance-pin {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border: 3px solid #f8fafc;
+  border-radius: 14px;
+  color: #ef4444;
+  background: linear-gradient(135deg, #ffffff, #dbeafe);
+  box-shadow: 0 12px 32px rgba(37, 99, 235, 0.38), 0 0 0 8px rgba(14, 165, 233, 0.16);
+  animation: ambulanceFloat 0.9s ease-in-out infinite;
+}
+
+.fleet-marker {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border: 3px solid #ffffff;
+  border-radius: 14px;
+  color: #ef4444;
+  background: linear-gradient(135deg, #ffffff, #dbeafe);
+  box-shadow: 0 12px 32px color-mix(in srgb, var(--marker-color) 45%, transparent), 0 0 0 8px color-mix(in srgb, var(--marker-color) 18%, transparent);
+  animation: ambulanceFloat 0.9s ease-in-out infinite;
+}
+
+.fleet-marker span {
+  font-size: 27px;
+  line-height: 1;
+  font-weight: 900;
+}
+
+.fleet-marker small {
+  position: absolute;
+  left: 50%;
+  bottom: -21px;
+  transform: translateX(-50%);
+  padding: 3px 7px;
+  border-radius: 999px;
+  color: #ffffff;
+  background: var(--marker-color);
+  font-size: 9px;
+  font-weight: 900;
+  white-space: nowrap;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.28);
+}
+
+.ambulance-pin::before,
+.ambulance-pin::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  width: 9px;
+  height: 9px;
+  border-radius: 999px;
+  background: #0f172a;
+}
+
+.ambulance-pin::before {
+  left: 8px;
+}
+
+.ambulance-pin::after {
+  right: 8px;
+}
+
+.ambulance-pin span {
+  font-size: 27px;
+  line-height: 1;
+  font-weight: 900;
+}
+
+.destination-pin {
+  width: 30px;
+  height: 30px;
+  border: 5px solid #ffffff;
+  border-radius: 50% 50% 50% 0;
+  background: #ef4444;
+  box-shadow: 0 12px 30px rgba(239, 68, 68, 0.35);
+  transform: rotate(-45deg);
+  animation: destinationPulse 1.35s ease-in-out infinite;
+}
+
+.destination-pin::after {
+  content: "";
+  position: absolute;
+  inset: 7px;
+  border-radius: 999px;
+  background: #ffffff;
+}
+
+.emergency-pin {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border: 3px solid #ffffff;
+  border-radius: 999px;
+  color: #ffffff;
+  background: linear-gradient(135deg, #ef4444, #f97316);
+  box-shadow: 0 0 0 8px rgba(239, 68, 68, 0.16), 0 16px 32px rgba(239, 68, 68, 0.34);
+  font-size: 22px;
+  font-weight: 900;
+  animation: emergencyPulse 1s ease-in-out infinite;
+}
+
+.animated-dash {
+  stroke-dasharray: 12, 12;
+  animation: dashMove 0.9s linear infinite;
+}
+
+.route-popup h4 {
+  margin: 0 0 4px;
+  color: #0f172a;
+}
+
+.route-popup p {
+  margin: 2px 0;
+  color: #334155;
+}
+
+.route-info-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+  margin-top: 16px;
+}
+
+.route-info-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-height: 96px;
+  padding: 18px;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.route-info-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(56, 189, 248, 0.36);
+}
+
+.info-icon {
+  flex: 0 0 auto;
+  width: 42px;
+  height: 42px;
+  border-radius: 8px;
+}
+
+.start-icon {
+  background: linear-gradient(135deg, #22c55e, #14b8a6);
+}
+
+.destination-icon {
+  background: linear-gradient(135deg, #fb7185, #ef4444);
+}
+
+.distance-icon {
+  background: linear-gradient(135deg, #38bdf8, #2563eb);
+}
+
+.eta-icon {
+  background: linear-gradient(135deg, #facc15, #f97316);
+}
+
+.route-info-card h4 {
+  margin: 0;
+  color: #94a3b8;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.route-info-card p {
+  margin: 5px 0 0;
+  color: #f8fafc;
+  font-size: 16px;
+  font-weight: 900;
+}
+
+.ambulance-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 14px;
+  margin-top: 16px;
+}
+
+.ambulance-card {
+  position: relative;
+  min-height: 150px;
+  padding: 18px;
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  border-radius: 8px;
+  background: rgba(15, 23, 42, 0.76);
+  box-shadow: 0 18px 52px rgba(0, 0, 0, 0.22);
+  cursor: pointer;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.ambulance-card:hover,
+.ambulance-card.tracked {
+  transform: translateY(-4px);
+  border-color: rgba(56, 189, 248, 0.5);
+  box-shadow: 0 22px 70px rgba(56, 189, 248, 0.18);
+}
+
+.amb-card-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+}
+
+.amb-name {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.amb-status {
+  padding: 5px 10px;
+  border-radius: 999px;
+  color: #ffffff;
+  background: #64748b;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.amb-status.available {
+  background: #16a34a;
+}
+
+.amb-status.on-route {
+  background: #d97706;
+}
+
+.amb-status.busy {
+  background: #dc2626;
+}
+
+.amb-card-body {
+  margin-top: 14px;
+}
+
+.amb-card-body p {
+  margin: 6px 0;
+  color: #a7b4c8;
+  font-size: 14px;
+}
+
+.amb-tracking-badge {
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  color: #67e8f9;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.fade-in { animation: fadeIn 0.65s ease both; }
+.slide-up { animation: slideUp 0.72s ease both; }
+.zoom-in { animation: zoomIn 0.72s ease both; }
+.pop-in { animation: popIn 0.6s ease both; }
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes zoomIn {
+  from { opacity: 0; transform: scale(0.985); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes popIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes statusPulse {
+  50% { transform: scale(1.35); opacity: 0.72; }
+}
+
+@keyframes glareMove {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(100%); }
+}
+
+@keyframes ambulanceFloat {
+  50% { transform: translateY(-7px); }
+}
+
+@keyframes destinationPulse {
+  50% { transform: rotate(-45deg) scale(1.12); }
+}
+
+@keyframes dashMove {
+  to { stroke-dashoffset: -24; }
+}
+
+@keyframes emergencyPulse {
+  50% { transform: scale(1.12); }
+}
+
+@media (max-width: 900px) {
+  .route-sim-container {
+    padding: 16px;
+  }
+
+  .route-sim-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .route-controls {
+    grid-template-columns: 1fr;
+  }
+
+  .route-buttons {
+    justify-content: stretch;
+  }
+
+  .route-btn {
+    flex: 1;
+  }
+
+  .route-live-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .route-sim-header,
+  .route-controls,
+  .route-progress,
+  .route-info-card {
+    padding: 14px;
+  }
+
+  .route-buttons {
+    flex-direction: column;
+  }
+
+  .route-map {
+    min-height: 330px;
+  }
+
+  .route-live-stats {
+    grid-template-columns: 1fr;
+  }
+}

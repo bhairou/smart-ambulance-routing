@@ -1,0 +1,295 @@
+/* ===== ULTRA PREMIUM ANALYTICS CSS ===== */
+
+.analytics-container {
+  padding: 30px 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* ===== GLASS HEADER ===== */
+.analytics-glass-header {
+  background: linear-gradient(145deg, rgba(18, 27, 43, 0.85), rgba(26, 38, 57, 0.85));
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 24px;
+  padding: 30px 40px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 30px;
+  animation: headerSlideIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.header-glow {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at 30% 50%, rgba(13, 110, 253, 0.12), transparent 70%);
+  animation: glowRotate 20s linear infinite;
+}
+
+@keyframes glowRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.header-content-animated {
+  position: relative;
+  z-index: 1;
+}
+
+.header-content-animated h2 {
+  font-size: 34px;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.header-content-animated p {
+  color: var(--text-secondary);
+  font-size: 16px;
+  margin-top: 4px;
+}
+
+.live-dot-animated {
+  color: #ef4444;
+  animation: dotPulseNew 1s ease-in-out infinite;
+  display: inline-block;
+}
+
+@keyframes dotPulseNew {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.3; transform: scale(0.8); }
+}
+
+@keyframes headerSlideIn {
+  from { opacity: 0; transform: translateY(-30px) scale(0.95); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* ===== 3D STATS CARDS ===== */
+.analytics-stats-3d {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+  margin-bottom: 30px;
+  perspective: 1000px;
+}
+
+.stat-card-3d {
+  width: 100%;
+  height: 140px;
+  cursor: pointer;
+  animation: cardFloat 0.8s ease-out forwards;
+  animation-delay: var(--delay, 0s);
+  opacity: 0;
+}
+
+@keyframes cardFloat {
+  from { opacity: 0; transform: translateY(40px) rotateX(-10deg); }
+  to { opacity: 1; transform: translateY(0) rotateX(0deg); }
+}
+
+.stat-card-3d .card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform-style: preserve-3d;
+}
+
+.stat-card-3d:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.stat-card-3d .card-front,
+.stat-card-3d .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 20px;
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: linear-gradient(145deg, #121b2b, #1a2639);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.stat-card-3d .card-back {
+  transform: rotateY(180deg);
+  background: linear-gradient(145deg, #0d1b2a, #0d6efd);
+  border-color: rgba(13, 110, 253, 0.3);
+}
+
+.stat-card-3d .card-back p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 14px;
+  margin: 4px 0;
+}
+
+.stat-icon-3d {
+  font-size: 30px;
+  margin-bottom: 4px;
+}
+
+.stat-card-3d h4 {
+  color: var(--text-secondary);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+.stat-number-3d {
+  font-size: 34px;
+  font-weight: 900;
+  color: #ffffff;
+  margin: 2px 0;
+}
+
+.stat-change-3d {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 10px;
+  border-radius: 12px;
+  align-self: flex-start;
+}
+
+.stat-change-3d.up {
+  color: #4ade80;
+  background: rgba(74, 222, 128, 0.12);
+}
+
+/* ===== GLASS CHARTS ===== */
+.charts-grid-animated {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 24px;
+}
+
+.chart-card-glass {
+  background: linear-gradient(145deg, rgba(18, 27, 43, 0.85), rgba(26, 38, 57, 0.85));
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  animation: chartPopIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  animation-delay: var(--delay, 0s);
+  opacity: 0;
+  transform: scale(0.95);
+  transition: all 0.4s ease;
+}
+
+.chart-card-glass:hover {
+  border-color: rgba(13, 110, 253, 0.3);
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 20px 60px rgba(13, 110, 253, 0.15);
+}
+
+@keyframes chartPopIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.chart-header-glass {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.chart-header-glass h4 {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.chart-badge-glass {
+  background: rgba(13, 110, 253, 0.15);
+  color: #8ab4f8;
+  padding: 2px 12px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.chart-badge-glass.live {
+  background: rgba(239, 68, 68, 0.15);
+  color: #ef4444;
+  animation: livePulseNew 1.5s ease-in-out infinite;
+}
+
+@keyframes livePulseNew {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.doughnut-wrapper-glass {
+  max-width: 230px;
+  margin: 0 auto;
+}
+
+/* ===== PERFORMANCE LIST GLASS ===== */
+.performance-list-glass {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.perf-item-glass {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 14px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  transition: all 0.3s ease;
+}
+
+.perf-item-glass:hover {
+  background: rgba(13, 110, 253, 0.08);
+  border-color: rgba(13, 110, 253, 0.2);
+  transform: translateX(4px);
+}
+
+.perf-item-glass span:first-child {
+  color: #8ab4f8;
+  font-size: 14px;
+}
+
+.perf-value-glass {
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.perf-value-glass.green {
+  color: #4ade80;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .analytics-container { padding: 16px; }
+  .charts-grid-animated { grid-template-columns: 1fr; }
+  .analytics-stats-3d { grid-template-columns: 1fr 1fr; }
+  .analytics-glass-header { padding: 20px; }
+  .header-content-animated h2 { font-size: 26px; }
+  .stat-card-3d { height: 120px; }
+  .stat-number-3d { font-size: 28px; }
+}
+
+@media (max-width: 480px) {
+  .analytics-stats-3d { grid-template-columns: 1fr; }
+  .stat-card-3d { height: 110px; }
+  .stat-card-3d .card-front,
+  .stat-card-3d .card-back { padding: 14px 18px; }
+}

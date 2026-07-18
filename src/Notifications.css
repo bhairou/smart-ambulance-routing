@@ -1,0 +1,211 @@
+/* Notifications Wrapper */
+.notifications-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+/* Bell Icon */
+.notification-bell {
+  border: 0;
+  background: transparent;
+  font-size: 24px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  color: #8ab4f8;
+  position: relative;
+  padding: 4px 8px;
+  line-height: 1;
+}
+
+.notification-bell:hover {
+  transform: scale(1.15);
+  color: #ffffff;
+}
+
+.notification-bell.has-alert {
+  animation: bellRing 1.8s ease-in-out infinite;
+}
+
+@keyframes bellRing {
+  0%, 70%, 100% { transform: rotate(0); }
+  76% { transform: rotate(12deg); }
+  82% { transform: rotate(-12deg); }
+  88% { transform: rotate(8deg); }
+}
+
+/* Notification Count Badge */
+.notification-count {
+  position: absolute;
+  top: -4px;
+  right: 0px;
+  background: linear-gradient(135deg, #dc3545, #b02a37);
+  color: white;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 50%;
+  min-width: 20px;
+  text-align: center;
+  animation: pulse-badge 1.5s ease-in-out infinite;
+  border: 2px solid #0d1b2a;
+}
+
+@keyframes pulse-badge {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+/* Dropdown */
+.notification-dropdown {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background: #121b2b;
+  border-radius: 16px;
+  padding: 16px;
+  min-width: 340px;
+  max-width: 400px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+  animation: slideDown 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  max-height: 420px;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-20px) scale(0.95); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Header */
+.notification-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #ffffff;
+  font-weight: 700;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.notification-header span {
+  font-size: 16px;
+}
+
+.notification-header button {
+  background: rgba(13, 110, 253, 0.15);
+  border: 1px solid rgba(13, 110, 253, 0.2);
+  color: #8ab4f8;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 14px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.notification-header button:hover {
+  background: rgba(13, 110, 253, 0.3);
+  color: #ffffff;
+}
+
+/* Notification Items */
+.notification-item {
+  padding: 12px 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 10px;
+  position: relative;
+  margin-top: 4px;
+}
+
+.notification-item:hover {
+  background: rgba(13, 110, 253, 0.08);
+  transform: translateX(4px);
+}
+
+.notification-item.unread {
+  background: rgba(13, 110, 253, 0.06);
+  border-left: 3px solid #0d6efd;
+}
+
+.notification-item.read {
+  opacity: 0.6;
+}
+
+.notification-item.read:hover {
+  opacity: 0.8;
+}
+
+.notification-item p {
+  color: #c8d0dc;
+  font-size: 14px;
+  margin: 0 0 4px 0;
+  padding-right: 20px;
+}
+
+.notification-time {
+  color: #4a5a7a;
+  font-size: 11px;
+}
+
+.unread-dot {
+  position: absolute;
+  top: 14px;
+  right: 10px;
+  width: 8px;
+  height: 8px;
+  background: #0d6efd;
+  border-radius: 50%;
+  animation: pulse-dot 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.8); }
+}
+
+.no-notifications {
+  color: #4a5a7a;
+  text-align: center;
+  padding: 30px 0;
+  font-size: 15px;
+}
+
+/* Scrollbar */
+.notification-dropdown::-webkit-scrollbar {
+  width: 4px;
+}
+
+.notification-dropdown::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.notification-dropdown::-webkit-scrollbar-thumb {
+  background: #0d6efd;
+  border-radius: 4px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .notification-dropdown {
+    min-width: 280px;
+    max-width: 320px;
+    right: -60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .notification-dropdown {
+    min-width: 240px;
+    max-width: 280px;
+    right: -40px;
+    padding: 12px;
+  }
+  
+  .notification-item p {
+    font-size: 13px;
+  }
+}

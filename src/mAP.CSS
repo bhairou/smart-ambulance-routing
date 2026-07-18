@@ -1,0 +1,32 @@
+/* ===== MAP STYLES ===== */
+.map-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px 20px;
+}
+
+.leaflet-container {
+  border: 2px solid rgba(13, 110, 253, 0.2);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+  border-radius: 16px;
+}
+
+.leaflet-popup-content {
+  min-width: 180px;
+}
+
+.leaflet-popup-content h4 {
+  color: #0d6efd;
+  margin-bottom: 6px;
+}
+
+.leaflet-popup-content p {
+  margin: 4px 0;
+  font-size: 13px;
+}
+
+@media (max-width: 768px) {
+  .map-container {
+    padding: 0 16px 16px;
+  }
+}

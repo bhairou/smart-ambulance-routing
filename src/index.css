@@ -1,0 +1,429 @@
+/* ============================================
+   THEME VARIABLES
+   ============================================ */
+
+/* ===== LIGHT MODE (DEFAULT) ===== */
+:root {
+  --bg-primary: #f5f7fb;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #e8ecf1;
+  --text-primary: #213547;
+  --text-secondary: #4a5a7a;
+  --border-color: #d0d7e0;
+  --navbar-bg: linear-gradient(135deg, #f0f3f8, #e8ecf1);
+  --navbar-border: rgba(13, 110, 253, 0.1);
+  --accent-color: #0d6efd;
+  --accent-light: rgba(13, 110, 253, 0.15);
+  --card-bg: #ffffff;
+  
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+/* ===== DARK MODE ===== */
+body.dark {
+  --bg-primary: #0a0e1a;
+  --bg-secondary: #1a1f2e;
+  --bg-tertiary: #2a3140;
+  --text-primary: #ffffff;
+  --text-secondary: #8ab4f8;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --navbar-bg: linear-gradient(135deg, #0d1b2a, #1b2838);
+  --navbar-border: rgba(13, 110, 253, 0.2);
+  --accent-color: #0d6efd;
+  --accent-light: rgba(13, 110, 253, 0.2);
+  --card-bg: #121b2b;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+/* ============================================
+   MOBILE RESPONSIVE - GLOBAL FIXES
+   ============================================ */
+
+/* ===== SMALL DEVICES (Mobile) ===== */
+@media (max-width: 768px) {
+  /* Body */
+  body {
+    font-size: 14px;
+  }
+
+  /* Navbar */
+  .navbar {
+    padding: 10px 12px !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+  }
+
+  .navbar-brand {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .brand-text {
+    font-size: 16px !important;
+  }
+
+  .navbar-menu {
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 4px !important;
+  }
+
+  .nav-item {
+    padding: 6px 10px !important;
+    font-size: 11px !important;
+  }
+
+  .nav-icon {
+    font-size: 14px !important;
+  }
+
+  .navbar-right {
+    width: 100%;
+    justify-content: center !important;
+    gap: 12px !important;
+  }
+
+  .user-profile {
+    font-size: 12px !important;
+    padding: 4px 12px !important;
+  }
+
+  .theme-toggle {
+    width: 32px !important;
+    height: 32px !important;
+    font-size: 16px !important;
+  }
+
+  /* ===== DASHBOARD ===== */
+  .dashboard-container {
+    padding: 0 !important;
+  }
+
+  /* Header */
+  .premium-header {
+    padding: 16px !important;
+  }
+
+  .header-content {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 12px !important;
+  }
+
+  .logo-section {
+    width: 100%;
+  }
+
+  .logo-icon {
+    font-size: 30px !important;
+    padding: 8px !important;
+  }
+
+  .logo-section h1 {
+    font-size: 18px !important;
+  }
+
+  .logo-section p {
+    font-size: 12px !important;
+  }
+
+  .header-stats {
+    width: 100% !important;
+    justify-content: space-around !important;
+    padding: 8px 12px !important;
+    gap: 12px !important;
+  }
+
+  .header-stat .stat-label {
+    font-size: 9px !important;
+  }
+
+  .header-stat .stat-value {
+    font-size: 16px !important;
+  }
+
+  /* Stats Cards */
+  .premium-stats-grid {
+    padding: 0 12px !important;
+    gap: 12px !important;
+    margin: 16px auto !important;
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  .premium-card {
+    padding: 14px 16px !important;
+    border-radius: 14px !important;
+  }
+
+  .stat-icon {
+    font-size: 24px !important;
+    width: 44px !important;
+    height: 44px !important;
+  }
+
+  .stat-info h3 {
+    font-size: 10px !important;
+  }
+
+  .stat-number {
+    font-size: 24px !important;
+  }
+
+  .stat-trend {
+    font-size: 10px !important;
+    padding: 2px 8px !important;
+  }
+
+  /* Emergency Button */
+  .premium-emergency-section {
+    padding: 0 12px !important;
+  }
+
+  .premium-emergency-btn {
+    padding: 14px !important;
+    font-size: 16px !important;
+    border-radius: 12px !important;
+  }
+
+  .premium-emergency-form {
+    padding: 16px !important;
+  }
+
+  .premium-emergency-form h2 {
+    font-size: 18px !important;
+  }
+
+  .premium-emergency-form input,
+  .premium-emergency-form textarea {
+    padding: 10px 14px !important;
+    font-size: 14px !important;
+  }
+
+  .submit-emergency-btn {
+    padding: 12px !important;
+    font-size: 16px !important;
+  }
+
+  /* Map */
+  .map-container {
+    padding: 0 12px 12px !important;
+  }
+
+  .map-container .leaflet-container {
+    height: 250px !important;
+    border-radius: 12px !important;
+  }
+
+  /* Section Headers */
+  .premium-section-header {
+    padding: 0 12px !important;
+    margin: 24px auto 12px !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 6px !important;
+  }
+
+  .premium-section-header h2 {
+    font-size: 20px !important;
+  }
+
+  .section-badge {
+    font-size: 10px !important;
+    padding: 4px 12px !important;
+  }
+
+  /* Hospital Grid */
+  .hospital-section {
+    padding: 0 12px !important;
+  }
+
+  .hospital-grid {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+    padding: 0 0 20px 0 !important;
+  }
+
+  .hospital-card {
+    padding: 16px !important;
+    border-radius: 14px !important;
+  }
+
+  .hospital-name {
+    font-size: 15px !important;
+  }
+
+  .bed-status {
+    font-size: 10px !important;
+    padding: 2px 10px !important;
+  }
+
+  .hospital-details .detail-item {
+    font-size: 13px !important;
+  }
+
+  /* Ambulance Grid */
+  .premium-ambulance-grid {
+    padding: 0 12px 24px !important;
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  .premium-ambulance-card {
+    padding: 16px !important;
+    border-radius: 14px !important;
+  }
+
+  .ambulance-id {
+    font-size: 16px !important;
+  }
+
+  .premium-status-badge {
+    font-size: 10px !important;
+    padding: 2px 10px !important;
+  }
+
+  .ambulance-details .detail-item {
+    font-size: 13px !important;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 24px 16px 16px !important;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+    text-align: center !important;
+  }
+
+  .footer-brand h3 {
+    font-size: 18px !important;
+  }
+
+  .footer-links ul,
+  .footer-support ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .footer-links li,
+  .footer-support li {
+    margin-bottom: 0 !important;
+  }
+
+  .social-icons {
+    justify-content: center !important;
+  }
+
+  .footer-bottom {
+    flex-direction: column !important;
+    text-align: center !important;
+    font-size: 12px !important;
+  }
+
+  /* Success Toast */
+  .success-toast {
+    top: 70px !important;
+    right: 12px !important;
+    left: 12px !important;
+    padding: 12px 16px !important;
+    border-radius: 12px !important;
+  }
+
+  .success-toast .toast-icon {
+    font-size: 22px !important;
+  }
+
+  .success-toast strong {
+    font-size: 14px !important;
+  }
+
+  .success-toast p {
+    font-size: 12px !important;
+  }
+
+  /* Countdown Banner */
+  .countdown-banner {
+    font-size: 13px !important;
+    padding: 8px 16px !important;
+  }
+
+  /* Loading Spinner */
+  .loading-spinner {
+    font-size: 14px !important;
+  }
+}
+
+/* ===== VERY SMALL DEVICES (Phones < 480px) ===== */
+@media (max-width: 480px) {
+  .premium-stats-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .premium-card {
+    padding: 12px 14px !important;
+  }
+
+  .stat-number {
+    font-size: 20px !important;
+  }
+
+  .logo-section h1 {
+    font-size: 16px !important;
+  }
+
+  .header-stat .stat-value {
+    font-size: 14px !important;
+  }
+
+  .premium-emergency-btn {
+    font-size: 14px !important;
+    padding: 12px !important;
+  }
+
+  .nav-item {
+    font-size: 10px !important;
+    padding: 4px 8px !important;
+  }
+
+  .hospital-name {
+    font-size: 14px !important;
+  }
+
+  .ambulance-id {
+    font-size: 14px !important;
+  }
+
+  .footer {
+    padding: 16px 12px 12px !important;
+  }
+
+  .footer-brand h3 {
+    font-size: 16px !important;
+  }
+
+  .success-toast {
+    top: 60px !important;
+    padding: 10px 14px !important;
+  }
+}

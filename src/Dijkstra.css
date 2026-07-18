@@ -1,0 +1,281 @@
+/* ===== DIJKSTRA CSS ===== */
+.dijkstra-container {
+  padding: 30px 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.dijkstra-header h2 {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.dijkstra-header p {
+  color: var(--text-secondary);
+  font-size: 16px;
+  margin-top: 4px;
+}
+
+/* ===== CONTROLS ===== */
+.dijkstra-controls {
+  background: linear-gradient(145deg, #121b2b, #1a2639);
+  border-radius: 20px;
+  padding: 30px;
+  border: 1px solid rgba(255,255,255,0.06);
+  margin: 20px 0 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  align-items: flex-end;
+}
+
+.control-group {
+  flex: 1;
+  min-width: 180px;
+}
+
+.control-group label {
+  display: block;
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.control-group select {
+  width: 100%;
+  padding: 12px 16px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  color: var(--text-primary);
+  font-size: 15px;
+  cursor: pointer;
+  transition: border 0.3s;
+}
+
+.control-group select:focus {
+  outline: none;
+  border-color: #0d6efd;
+}
+
+.control-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.calc-btn {
+  padding: 12px 30px;
+  background: linear-gradient(135deg, #0d6efd, #0b5ed7);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.calc-btn:hover:not(:disabled) {
+  transform: scale(1.05);
+  box-shadow: 0 10px 40px rgba(13, 110, 253, 0.3);
+}
+
+.calc-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.reset-btn {
+  padding: 12px 24px;
+  background: rgba(255,255,255,0.05);
+  color: #8ab4f8;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.reset-btn:hover {
+  background: rgba(255,255,255,0.1);
+  transform: scale(1.05);
+}
+
+/* ===== RESULTS ===== */
+.dijkstra-results {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 24px;
+}
+
+.result-card, .path-card, .traffic-card {
+  background: linear-gradient(145deg, #121b2b, #1a2639);
+  border-radius: 20px;
+  padding: 24px;
+  border: 1px solid rgba(255,255,255,0.06);
+  transition: all 0.3s ease;
+}
+
+.result-card:hover, .path-card:hover, .traffic-card:hover {
+  border-color: rgba(13, 110, 253, 0.2);
+}
+
+.result-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.result-icon {
+  font-size: 28px;
+}
+
+.result-header h3 {
+  color: #4ade80;
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.result-details {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.result-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 12px;
+  background: rgba(255,255,255,0.03);
+  border-radius: 8px;
+}
+
+.result-item.highlight {
+  background: rgba(13, 110, 253, 0.1);
+  border: 1px solid rgba(13, 110, 253, 0.2);
+}
+
+.result-label {
+  color: #8ab4f8;
+  font-size: 14px;
+}
+
+.result-value {
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* ===== PATH VISUALIZATION ===== */
+.path-card h4 {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.path-steps {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  padding: 16px;
+  background: rgba(255,255,255,0.03);
+  border-radius: 12px;
+  min-height: 50px;
+}
+
+.path-step {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.step-node {
+  padding: 6px 14px;
+  background: rgba(13, 110, 253, 0.15);
+  color: #8ab4f8;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  border: 1px solid rgba(13, 110, 253, 0.1);
+}
+
+.step-arrow {
+  color: #4a5a7a;
+  font-size: 18px;
+}
+
+.path-summary {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  color: #8ab4f8;
+  font-size: 14px;
+}
+
+.path-summary strong {
+  color: #4ade80;
+}
+
+/* ===== TRAFFIC CARD ===== */
+.traffic-card h4 {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.traffic-card p {
+  color: #8ab4f8;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.traffic-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.traffic-legend .legend-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #c8d0dc;
+  font-size: 13px;
+}
+
+.legend-color {
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+}
+
+.legend-color.green { background: #4ade80; }
+.legend-color.yellow { background: #fbbf24; }
+.legend-color.red { background: #f87171; }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .dijkstra-container { padding: 16px; }
+  .dijkstra-controls { flex-direction: column; }
+  .control-group { min-width: 100%; }
+  .control-buttons { width: 100%; }
+  .calc-btn, .reset-btn { flex: 1; text-align: center; }
+  .dijkstra-results { grid-template-columns: 1fr; }
+  .path-steps { flex-wrap: wrap; }
+}
+
+@media (max-width: 480px) {
+  .dijkstra-header h2 { font-size: 24px; }
+  .step-node { font-size: 11px; padding: 4px 10px; }
+}
