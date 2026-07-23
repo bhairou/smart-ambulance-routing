@@ -359,8 +359,3 @@ GitHub: @bhairou
 
 Made with ❤️ by Bhairou
 
-
-## ✅ **BATAO - KYA HO GAYA?**
-
-**Screenshot bhejo!** 👇
-This response is AI-generated, for reference only.
